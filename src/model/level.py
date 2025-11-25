@@ -6,7 +6,7 @@ class Level(Enum):
 
     NONE = 'None'
     MORPHOPHONOLOGY = 'Morphophonology'
-    ORTHOGRAPHY = 'Orthograpy'
+    ORTHOGRAPHY = 'Orthography'
     GRAMMAR = 'Grammar'
     SEMANTICS = 'Semantics'
     PRAGMATICS = 'Pragmatics'
