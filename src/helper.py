@@ -14,26 +14,6 @@ class Helper:
         try:
             with open(path, 'r') as file:
                 config.DATA = json.load(file)
-
-                # ############## TODO:will be deleted (for Elif's re-annotation) ########
-                #data_elif = json.load(file)
-
-                # getting task IDs in each sheet by reading Annotations.xlsx file
-                #filepath = "./Annotations.xlsx"
-                #xl = pd.ExcelFile(filepath)
-                #sheet_names = xl.sheet_names
-                #results = {}
-                #for sheet_name in sheet_names:
-                    #df = pd.read_excel(filepath, sheet_name=sheet_name, header=None)
-                    #results[sheet_name] = df[0].tolist()
-
-                # excluding overlapping tasks in mini-corpus
-                #for i in range(len(results["Elif2"])):
-                    #for idx, task in enumerate(data_elif):
-                        #if results["Elif2"][i] == task["data"]["ID"]:
-                            #config.DATA.append(task)
-                # ####################################################################
-
                 print("Data is loaded successfully.")
                 if config.DEBUG:
                     print(f"Number of tasks in the input file: {len(config.DATA)}")
@@ -171,7 +151,7 @@ class Helper:
     @staticmethod
     def load_metadata():
         try:
-            df = pd.read_excel("./input/metadata.xlsx", sheet_name="raw")
+            df = pd.read_excel("./input/_metadata.xlsx", sheet_name="raw")
             for row in df.values.tolist():
                 config.METADATA.append((row[0], str(row[1]).lower(), str(row[2]).lower(), str(row[3]).lower())) # id, nationality, gender, topic
         except Exception as e:
