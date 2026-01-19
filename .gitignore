@@ -10,8 +10,12 @@
 # ignore python cache files
 __pycache__/
 
+#ignored folders
+input_localuseonly/
+output_localuseonly/
+stats/
+
 # ignored files
 Annotations.xlsx
 sampling.py
 stats.py
-todo.txt
