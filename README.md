@@ -2,7 +2,7 @@
 
 This repository contains the **Annotation Extender (Auto-Extender)** described in:
 
-> Sayar, E., Türker, T., Knezhevich, A.G., Dereli, B., Demirhas, A., Nicolas, L., & Eryiğit, G. (2025). *A Taxonomy-Driven Error Annotation Scheme for Turkish Learner Corpora*. [Journal Name TBD].
+> Sayar, E., Türker, T., Knezhevich, A.G., Dereli, B., Demirhas, A., Nicolas, L., & Eryiğit, G. (2026). *A Taxonomy-Driven Error Annotation Scheme for Turkish Learner Corpora*. [Journal Name TBD].
 
 > Eryiğit, G., Golynskaia, A., Sayar, E. et al. Error annotation: a review and faceted taxonomy. Lang Resources & Evaluation 59, 3385–3409 (2025). https://doi.org/10.1007/s10579-024-09794-0
 
