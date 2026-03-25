@@ -2,7 +2,7 @@
 # Represents <Error> in the paper https://doi.org/10.1007/s10579-024-09794-0
 class Error:
     # constructor
-    def __init__(self, id = "", idLabelStudio = 0, idData = 0, rawText = '', idxStartErr = 0, idxEndErr = 0, incorrText = '', errType = '', corrText = '', errTax = None, metadata = None):    
+    def __init__(self, id = "", idLabelStudio = 0, idData = 0, rawText = '', idxStartErr = 0, idxEndErr = 0, incorrText = '', errType = '', corrText = '', errTax = None, metadata = None, reconstructedTask = ''):    
         self.id = id # id of the result
         self.idLabelStudio = idLabelStudio # data[0]["id"] -> id that Label Studio assigned to task (text)
         self.idData = idData # data[0]["data"]["ID"] -> id that is coming from the data itself (per text)
@@ -14,6 +14,7 @@ class Error:
         self.corrText = corrText # data[0]["annotations"][0]["result"][1]["value"]["text"][0] -> corrected text, filled by Helper.get_corrected_text()
         self.errTax = errTax # for taxonomy mapping of the error
         self.metadata = metadata # for metadata
+        self.reconstructedTask = reconstructedTask
     
     def to_dict(self):
         return {
@@ -27,5 +28,6 @@ class Error:
             "errType": self.errType,
             "corrText": self.corrText,
             "errTax": self.errTax.to_dict() if self.errTax else None,
-            "metadata": self.metadata.to_dict() if self.metadata else None
+            "metadata": self.metadata.to_dict() if self.metadata else None,
+            "reconstructedTask": self.reconstructedTask
         }

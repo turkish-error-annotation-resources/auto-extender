@@ -94,6 +94,8 @@ def run(path):
                 err.errType = result["value"]["labels"][0] # type of the error (observational fact; Label Studio creates different result object for the same region which has multiple labels)
                 err.corrText = Helper.get_corrected_text(idx, result["id"]) # corrected text of the error span
                 
+                err.reconstructedTask = reconstructed_task_data # reconstructed task text (with all corrections)
+
                 # taxonomy related features
                 err.errTax = Taxonomy()
                 
@@ -172,7 +174,7 @@ def run(path):
 
 # run the extender with the following command: python src/main.py "/Users/tolgahanturker/Downloads/***.json"
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Semi-automated Annotation Extender")
+    parser = argparse.ArgumentParser(description="Annotation Extender")
     parser.add_argument("path", help="File path to the exported JSON annotations from Label Studio.")
     
     if len(sys.argv) == 1:
@@ -189,5 +191,5 @@ if __name__ == "__main__":
 
     # optionally, save the enriched errors to a JSON file
     errors_as_dicts = [e.to_dict() for e in enriched_errors]
-    with open("./output/results_elif.json", "w", encoding="utf-8") as f:
+    with open("./output/results_entire_corpus_with_reconstructed_tasks2.json", "w", encoding="utf-8") as f:
         json.dump(errors_as_dicts, f, ensure_ascii=False, indent=4)
