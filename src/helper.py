@@ -161,7 +161,7 @@ class Helper:
     @staticmethod
     def load_abbreviations_tdk():
         try:
-            df = pd.read_excel("./res/abbr_list_tr.xlsx")
+            df = pd.read_excel("./resources/abbr_list_tr.xlsx")
             for row in df.values.tolist():
                 config.ABBREVIATIONS_TDK.append(str(row[0]).lower())
         except Exception as e:
