@@ -13,19 +13,7 @@ from model.phenomenon import Phenomenon
 from model.metadata import Metadata
 import json
 
-"""
-CONLLU format fields:
-ID → Token counter within the sentence (1, 2, 3, …).
-FORM → The surface form (exact word in the text).
-LEMMA → Dictionary/base form of the word.
-UPOS → Universal POS tag (VERB, NOUN, ADJ, etc.).
-XPOS → Language-specific part-of-speech tag. ← This is the one you’re asking about.
-FEATS → Morphological features (case, tense, number, gender, etc.).
-HEAD → ID of the head word (syntactic parent).
-DEPREL → Dependency relation to the head (nsubj, obj, root, …).
-DEPS → Enhanced dependencies (may contain multiple head:relation pairs).
-MISC → Miscellaneous info (e.g., spaces, alignment).
-"""
+# conllu columns in udpipe output: ID, FORM, LEMMA, UPOS, XPOS, FEATS, HEAD, DEPREL, DEPS, MISC
 
 def run(path):
     # loading input file (Label Studio's json output/export file)
